@@ -5,6 +5,9 @@
  *  @version	0.1
  */
 
+
+package editor;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -46,12 +49,8 @@ public class mainEditor extends JFrame {
 	//variable declaration
 	JPanel mainPanel, editorPanel, displayPanel;
 	JMenuBar mbMain;
-	JMenu menuFile, menuEdit, menuFormat, menuWindow, menuHelp; 
+	JMenu menuFile; 
 	JMenuItem miFileNew, miFileOpen, miFileSave, miFileSaveAs, miFileClose, miFileQuit;  //File menu options
-	JMenuItem miEditUndo, miEditRedo, miEditCut, miEditCopy, miEditPaste;  //Edit menu options
-	JMenuItem miFormatFont, miFormatBold, miFormatItalic, miFormatUnderline, miFormatActualSize, miFormatZoomIn, miFormatZoomOut;  //Format menu options
-	JMenuItem miWindowMin, miWindowBtFront, miWindowShowNamed;  //Window menu options
-	JMenuItem miHelpWelcome, miHelpContents, miHelpSearch;  //Help menu options
 	JDialog newFile;
 	JTextArea editorTextArea;
 	JScrollPane editorArea;
@@ -117,86 +116,9 @@ public class mainEditor extends JFrame {
 		menuFile.add(miFileSaveAs);
 		menuFile.add(miFileQuit);
 
-		//set up Edit menu and options
-		menuEdit = new JMenu("Edit");
-		menuEdit.setBackground(Color.blue);
-		miEditUndo = new JMenuItem("Undo");
-		miEditUndo.setBackground(Color.lightGray);
-		miEditRedo = new JMenuItem("Redo");
-		miEditRedo.setBackground(Color.lightGray);
-		miEditCut = new JMenuItem("Cut");
-		miEditCut.setBackground(Color.lightGray);
-		miEditCopy = new JMenuItem("Copy");
-		miEditCopy.setBackground(Color.lightGray);
-		miEditPaste = new JMenuItem("Paste");
-		miEditPaste.setBackground(Color.lightGray);
-		
-		menuEdit.add(miEditUndo);
-		menuEdit.add(miEditRedo);
-		menuEdit.add(miEditCut);
-		menuEdit.add(miEditCopy);
-		menuEdit.add(miEditPaste);
-		
-		//set up Format menu and options
-		menuFormat = new JMenu("Format");
-		menuFormat.setBackground(Color.blue);
-		miFormatFont = new JMenuItem("Fonts");
-		miFormatFont.setBackground(Color.lightGray);
-		miFormatBold = new JMenuItem("Bold");
-		miFormatBold.setBackground(Color.lightGray);
-		miFormatItalic = new JMenuItem("Italic");
-		miFormatItalic.setBackground(Color.lightGray);
-		miFormatUnderline = new JMenuItem("Underline");
-		miFormatUnderline.setBackground(Color.lightGray);
-		miFormatActualSize = new JMenuItem("Actual Size");
-		miFormatActualSize.setBackground(Color.lightGray);
-		miFormatZoomIn = new JMenuItem("Zoom In");
-		miFormatZoomIn.setBackground(Color.lightGray);
-		miFormatZoomOut = new JMenuItem("Zoom Out");
-		miFormatZoomOut.setBackground(Color.lightGray);
-		
-		menuFormat.add(miFormatFont);
-		menuFormat.add(miFormatBold);
-		menuFormat.add(miFormatItalic);
-		menuFormat.add(miFormatUnderline);
-		menuFormat.add(miFormatActualSize);
-		menuFormat.add(miFormatZoomIn);
-		menuFormat.add(miFormatZoomOut);
-		
-		//set up Window menu and options
-		menuWindow = new JMenu("Window");
-		menuWindow.setBackground(Color.blue);
-		miWindowMin = new JMenuItem("Minimize");
-		miWindowMin.setBackground(Color.lightGray);
-		miWindowBtFront = new JMenuItem("Bring All to Front");
-		miWindowBtFront.setBackground(Color.lightGray);
-		miWindowShowNamed = new JMenuItem("Show Named Window");
-		miWindowShowNamed.setBackground(Color.lightGray);
-		
-		menuWindow.add(miWindowMin);
-		menuWindow.add(miWindowBtFront);
-		menuWindow.add(miWindowShowNamed);
-		
-		//set up Help menu and options
-		menuHelp = new JMenu("Help");
-		menuHelp.setBackground(Color.blue);
-		miHelpWelcome = new JMenuItem("Welcome");
-		miHelpWelcome.setBackground(Color.lightGray);
-		miHelpContents = new JMenuItem("Contents");
-		miHelpContents.setBackground(Color.lightGray);
-		miHelpSearch = new JMenuItem("Search");
-		miHelpSearch.setBackground(Color.lightGray);
-		
-		menuHelp.add(miHelpWelcome);
-		menuHelp.add(miHelpContents);
-		menuHelp.add(miHelpSearch);
 		
 		//setting up menu bar and text area
 		mbMain.add(menuFile);
-		mbMain.add(menuEdit);
-		mbMain.add(menuFormat);
-		mbMain.add(menuWindow);
-		mbMain.add(menuHelp);
 
 		setJMenuBar(mbMain);		
 		add(mainPanel, BorderLayout.CENTER);
